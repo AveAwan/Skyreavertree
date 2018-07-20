@@ -1,0 +1,149 @@
+ideas = {
+
+	political_advisor = {
+	
+		big_joe = {
+			
+			picture = joe_advisor
+			
+			allowed = {
+				original_tag = SKY
+			}
+			available = 
+			{	
+			has_completed_focus = diplomaticapp
+			}
+			traits = { trusted_advisor }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+		darius_will = {
+			
+			picture = darius_advisor
+			
+			allowed = {
+				original_tag = SKY
+			}
+			available = 
+			{	NOT = 
+				{ has_country_leader = { id = 1001 }
+				}
+			has_completed_focus = improvingloyalty
+			}
+			traits = { mayor_crystal }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+		marcus_johnson = {
+			
+			picture = marcus_advisor
+			
+			allowed = {
+				original_tag = SKY
+			}
+			available = 
+			{
+			has_completed_focus = expand1
+			}
+			traits = { right_hand_man }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+		frank_butcher = {
+			
+			picture = butcher_advisor
+			
+			allowed = {
+				original_tag = SKY
+			}
+			available = 
+			{	NOT = 
+				{ has_country_leader = { id = 1003 }
+				}
+			has_completed_focus = a61
+			}
+			traits = { intellectual_mob_boss }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	
+	high_command = {
+		Joker = {
+			
+			picture = Joker
+			
+			allowed = {
+				original_tag = SKY
+			}
+			available = 
+			{
+			}
+
+			traits = { joker_captain }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		Bane = {
+			
+			allowed = {
+				original_tag = SKY
+			}
+			available = 
+			{
+			}
+
+			traits = { hard_drill }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		widow = {
+			
+			allowed = {
+				original_tag = SKY
+			}
+			available = 
+			{
+			}
+
+			traits = { reaver_quartermaster }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	army_chief = {	
+		ivan_serkov = {
+		
+			picture = ivan_serkov
+						
+			allowed = {
+				original_tag = SKY
+			}
+			available = 
+			{
+			}
+			traits = { flash_in_the_pan }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}

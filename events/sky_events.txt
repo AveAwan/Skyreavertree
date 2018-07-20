@@ -1,0 +1,571 @@
+﻿add_namespace = sky_events
+
+country_event = {
+    id = sky_events.1
+    title = sky.0.t
+    desc = sky.0.d
+    picture = GFX_event_generic_settlement_1
+    is_triggered_only = yes
+    
+		option = {
+    name = sky.0.a
+    add_manpower =1000
+	}
+		option = {
+    name = sky.0.b
+	add_political_power=150
+			
+		}	
+    	option = {
+    name = sky.0.c
+	army_experience =30
+    }
+}
+country_event = {
+    id = sky_events.2
+    title = sky.1.t
+    desc = sky.1.d
+    picture = GFX_event_generic_settlement_1
+    is_triggered_only = yes
+    
+	option = {
+		name = sky.1.a
+
+			add_ideas = domination
+			set_politics = {
+			ruling_party = ruler
+			elections_allowed = no
+			}
+	}
+	option = {
+		name = sky.1.b
+		
+			add_ideas=sugarbread
+			set_politics = {
+			ruling_party = ruler
+			elections_allowed = no
+			}			
+	}	
+    option = {
+		name = sky.1.c
+		
+			add_ideas =support
+			set_politics = {
+			ruling_party = ruler
+			elections_allowed = no
+			}
+	}
+}
+country_event = {
+    id= sky_events.3
+    title = krono.1.t
+    desc = krono.1.d
+    picture = GFX_event_generic_desert_1
+    is_triggered_only = yes
+    
+		option = {
+    name = krono.1.a
+    add_country_leader_trait = tactically_minded
+	}
+	option = {
+    name = krono.1.b
+	add_country_leader_trait = arizona_ranger
+	}
+    	option = {
+    name = krono.1.c
+	add_country_leader_trait = drill_sergeant
+	}
+}
+country_event = {
+    id = sky_events.4
+    title = krono.2.t
+    desc = krono.2.d
+    picture = GFX_event_generic_ruins_1
+    is_triggered_only = yes
+    
+		option = {
+    name = krono.2.a
+	add_ideas =progress
+	}
+		option = {
+    name = krono.2.b
+	add_ideas=wealth
+			
+		}	
+    	option = {
+    name = krono.2.c
+	add_ideas=authority
+    }
+}	
+	country_event = {
+    id = sky_events.5
+    title = sky_raider.1.t
+    desc = sky_raider.1.d
+    picture = GFX_event_generic_desert_1
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_raider.1.a
+	add_ideas = raideryes
+	NCR = {
+	country_event = { id = sky_events.11 days = 7 }
+	}
+	DES = {
+	country_event = { id = sky_events.11 days = 7 }
+	}
+	VEG = {
+	country_event = { id = sky_events.11 days = 7 }
+	}
+	}
+		option = {
+    name = sky_raider.1.b
+	add_ideas = raiderno	
+	NCR = {
+	country_event = { id = sky_events.12 days = 7 }
+	}
+	DES = {
+	country_event = { id = sky_events.12 days = 7 }
+	}
+	VEG = {
+	country_event = { id = sky_events.12 days = 7 }	
+	}
+	}
+}
+country_event = {
+    id =sky_events.6
+    title = sky_raider.2.t
+    desc = sky_raider.2.d
+    picture = GFX_event_generic_desert_2
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_raider.2.a
+	add_ideas = raidercamps
+	NCR = {
+	country_event = { id = sky_events.13 days = 7 }
+	}
+	DES = {
+	country_event = { id = sky_events.13 days = 7 }
+	}
+	VEG = {
+	country_event = { id = sky_events.13 days = 7 }
+	}
+	}
+		option = {
+    name = sky_raider.2.b
+	add_ideas =	guidingcamps
+	NCR = {
+	country_event = { id = sky_events.14 days = 7 }
+	}
+	DES = {
+	country_event = { id = sky_events.14 days = 7 }
+	}
+	VEG = {
+	country_event = { id = sky_events.14 days = 7 }
+	}
+	}
+}
+country_event = {
+    id = sky_events.7
+    title = sky_raider.3.t
+    desc = sky_raider.3.d
+    picture = GFX_event_generic_desert_2
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_raider.3.a
+	add_ideas = slavemarkets
+	NCR = {
+	country_event = { id = sky_events.15 days = 7 }
+	}
+	DES = {
+	country_event = { id = sky_events.15 days = 7 }
+	}
+	VEG = {
+	country_event = { id = sky_events.15 days = 7 }
+	}
+	}
+		option = {
+    name = sky_raider.3.b
+	add_ideas =	noslavemarkets
+	add_manpower = 500
+	NCR = {
+	country_event = { id = sky_events.16 days = 7 }
+	}
+	DES = {
+	country_event = { id = sky_events.16 days = 7 }
+	}
+	VEG = {
+	country_event = { id = sky_events.16 days = 7 }
+	}
+	}
+}
+country_event = {
+    id = sky_events.8 # NCR first Aggreement
+    title = sky_diplo.1a.t
+    desc = sky_diplo.1a.d
+    picture = GFX_event_NCR_camp
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_diplo.1a.a # NCR approves
+	SKY = {
+	country_event = { id = sky_events.9 days = 2 }
+	}
+		}
+		option = {
+    name = sky_diplo.1a.b # NCR declines
+	SKY = {
+	country_event = { id = sky_events.10 days = 2 }
+	}
+				}
+}
+country_event = {
+    id = sky_events.81 # DES first Aggreement
+    title = sky_diplo.2a.t
+    desc = sky_diplo.2a.d
+    picture = GFX_event_generic_desert_2
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_diplo.2a.a # DES approves
+	SKY = {
+	country_event = { id = sky_events.91 days = 2 }
+	}
+		}
+		option = {
+    name = sky_diplo.2a.b # DES declines
+	SKY = {
+	country_event = { id = sky_events.101 days = 2 }
+	}
+				}
+}
+country_event = {
+    id = sky_events.82 # VEG first Aggreement
+    title = sky_diplo.3a.t
+    desc = sky_diplo.3a.d
+    picture = GFX_event_generic_desert_3
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_diplo.3a.a # VEG approves
+	SKY = {
+	country_event = { id = sky_events.92 days = 2 }
+	}
+		}
+		option = {
+    name = sky_diplo.3a.b # VEG declines
+	SKY = {
+	country_event = { id = sky_events.102 days = 2 }
+	}
+				}
+}
+country_event = {
+    id = sky_events.9 # NCR approves
+    title = sky_diplo.1b.t
+    desc = sky_diplo.1b.d
+    picture = GFX_news_event_generic_sign_treaty1
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_diplo.1b.a # neat
+	diplomatic_relation = { country = NCR relation = non_aggression_pact }
+	}
+
+}
+country_event = {
+    id = sky_events.91 # DES approves
+    title = sky_diplo.2b.t
+    desc = sky_diplo.2b.d
+    picture = GFX_news_event_generic_sign_treaty1
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_diplo.2b.a # neat
+	diplomatic_relation = { country = DES relation = non_aggression_pact }
+	}
+
+}
+country_event = {
+    id = sky_events.92 # VEG approves
+    title = sky_diplo.3b.t
+    desc = sky_diplo.3b.d
+    picture = GFX_news_event_generic_sign_treaty1
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_diplo.3b.a # neat
+	diplomatic_relation = { country = VEG relation = non_aggression_pact }
+	}
+
+}
+country_event = {
+    id = sky_events.93 # Guarantees
+    title = sky_diplo.4.t
+    desc = sky_diplo.4.d
+    picture = GFX_news_event_generic_sign_treaty1
+    is_triggered_only = yes
+    
+	option = {
+	name = sky_diplo.4.a # yes
+	give_guarantee = SKY
+		SKY = {
+		country_event = { id = sky_events.94 days = 1 }	
+		}	
+	}
+	option = {
+    name = sky_diplo.4.b # no
+	}
+}
+country_event = {
+    id = sky_events.94 # Guarantee accepted
+    title = sky_diplo.4a.t
+    desc = sky_diplo.4a.d
+    picture = GFX_news_event_generic_sign_treaty1
+    is_triggered_only = yes
+    
+	option = {
+	name = sky_diplo.4a.a # yes
+		
+		If = {
+			Limit = {
+				FROM = { give_guarantee = ROOT }
+			}
+					ROOT = {
+						give_guarantee = FROM
+					}
+		}
+	}
+}
+
+country_event = {
+    id = sky_events.95 # Volunteer forces
+    title = sky_diplo.5.t
+    desc = sky_diplo.5.d
+    picture = GFX_news_event_generic_sign_treaty1
+    is_triggered_only = yes
+    
+	option = {
+	name = sky_diplo.5.a # yes
+
+		ROOT = {
+		load_oob = SKY_merc
+		add_opinion_modifier = { target = SKY modifier = large_increase }
+		}
+	}
+	option = {
+	name = sky_diplo.5.b # no
+		
+		ROOT = {
+		add_opinion_modifier = { target = SKY modifier = small_decrease }
+		}
+		
+	}
+}
+
+country_event = {
+    id = sky_events.10 # NCR declines
+    title = sky_diplo.1c.t
+    desc = sky_diplo.1c.d
+    picture = GFX_news_event_generic_rally
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_diplo.1c.a # shit!
+	}
+}
+country_event = {
+    id = sky_events.101 # DES declines
+    title = sky_diplo.2c.t
+    desc = sky_diplo.2c.d
+    picture = GFX_news_event_generic_rally
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_diplo.2c.a # shit!
+	}
+}
+country_event = {
+    id = sky_events.102 # VEG declines
+    title = sky_diplo.3c.t
+    desc = sky_diplo.3c.d
+    picture = GFX_news_event_generic_rally
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_diplo.3c.a # shit!
+	}
+}
+country_event = {
+    id = sky_events.11 # Raiding continues
+    title = sky_raider.4.t
+    desc = sky_raider.4.d
+    picture = GFX_event_generic_desert_1
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_raider.4.a # Troubling
+	}
+}
+country_event = {
+    id = sky_events.12 # Start paid caravan guiding
+    title = sky_raider.5.t
+    desc = sky_raider.5.d
+    picture = GFX_event_generic_desert_3
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_raider.5.a # intriguing
+	}
+}
+country_event = {
+    id = sky_events.13 # raider camps
+    title = sky_raider.6.t
+    desc = sky_raider.6.d
+    picture = GFX_event_generic_desert_2
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_raider.6.a # raider camps fortify
+	}
+}
+country_event = {
+    id = sky_events.14 # guiding camps
+    title = sky_raider.7.t
+    desc = sky_raider.7.d
+    picture = GFX_event_generic_desert_3
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_raider.7.a # guiding camps
+	}
+}
+country_event = {
+    id = sky_events.15 # slave markets
+    title = sky_raider.8.t
+    desc = sky_raider.8.d
+    picture = GFX_event_generic_desert_1
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_raider.8.a # Slave Markets
+	}
+}
+country_event = {
+    id = sky_events.16 # free communities
+    title = sky_raider.9.t
+    desc = sky_raider.9.d
+    picture = GFX_event_generic_desert_3
+    is_triggered_only = yes
+    
+		option = {
+    name = sky_raider.9.a # abolishment of Slavery
+	}
+}
+
+country_event = {
+    id = sky_events.17 # Political future of the Sky Reavers
+    title = sky_politics.1.t
+    desc = sky_politics.1.d
+    picture = GFX_event_generic_desert_3
+    is_triggered_only = yes
+    
+		option = {
+			name = sky_politics.1.a # Krono remains in power
+				trigger = {
+				has_completed_focus = reavers_reformed
+				has_completed_focus = hq
+				}
+			
+			set_politics = {
+			ruling_party = ruler
+			elections_allowed = no
+			}
+		}
+	
+		option = {
+			name = sky_politics.1.b # Martucci takes over
+				trigger = {
+				has_completed_focus = delivered
+				}
+			set_politics = {
+			ruling_party = Elites
+			elections_allowed = no
+			}
+			start_civil_war = {
+			ideology = ruler
+			size = 0.5
+			}
+		}
+	
+		option = {
+			name = sky_politics.1.c # Butcher takes over
+				trigger = {
+					has_completed_focus = a65
+				}
+				set_politics = {
+				ruling_party = intellectuals
+				elections_allowed = no
+				}
+				
+				start_civil_war = {
+				ideology = ruler
+				size = 0.5
+				}
+		}
+	
+		option = {
+			name = sky_politics.1.e # Will takes over
+				trigger = {
+					has_completed_focus = improvingloyalty
+				}
+				set_politics = {
+				ruling_party = people
+				elections_allowed = yes
+				}
+			start_civil_war = {
+			ideology = ruler
+			size = 0.5
+			}
+		}
+}
+country_event = {
+    id = sky_events.18 # AI Reaveralliance
+    title = sky_events.18.t
+    desc = sky_events.18.d
+    picture = GFX_event_generic_desert_3
+    is_triggered_only = yes
+    
+		option = {
+		name = sky_events.18a
+		
+			SKY = { puppet = ROOT }
+		
+			SKY = {
+				set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_dominion
+				}
+			}
+		}
+}		
+country_event = {
+ id = sky_events.19 # player Reaveralliance
+ title = sky_events.19.t
+ desc = sky_events.19.d
+ is_triggered_only = yes
+
+		option = {
+		name = sky_events.19.a
+		
+			SKY = {
+			create_faction = 'Reaver_Alliance'
+			add_to_faction = ROOT
+			}
+		}
+		
+		option = {
+		name = sky_events.19.b
+		}
+}
+    random_list = { 70 = { country_event = nf_vegas.26 } 30 = { country_event = nf_vegas.27 } }

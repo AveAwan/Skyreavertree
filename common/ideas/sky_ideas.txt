@@ -1,0 +1,501 @@
+ideas = {	
+	
+country = {
+		
+		raidergang = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+		
+			modifier = {
+				mobilization_laws_cost_factor = 0.5
+				economy_cost_factor 		  = 0.5
+				trade_laws_cost_factor		  = 0.5
+			}
+		}
+		kronodeal = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+		
+			modifier = {
+				stability_weekly = 0.002
+			}
+		}
+		oldworldmachines = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+		
+			modifier = {
+				global_building_slots_factor = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		oldworldarmour = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+		
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					hardness = 0.2
+					instant = yes
+				}
+			}
+			modifier = {
+				enemy_partisan_effect = -0.15
+			}
+		}
+		desertradio = {
+		
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.025
+			}
+		
+		}		
+		trainingfacilities = {
+		
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = 0.1
+				army_defence_factor = 0.1
+				attrition = -0.03
+			}
+		}
+		reaversworkbench = {
+		
+			picture = generic_infantry_equipment_manufacturer_1
+			
+		
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+            equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10
+                    instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.10
+                    instant = yes
+				}
+				motorbike_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                car_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                bus_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                truck_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+			}
+		}
+		hydroponics = {
+		
+			picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				MONTHLY_POPULATION = 0.10
+			}
+		
+		}
+		
+		migration = {
+		
+			picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				MONTHLY_POPULATION = 0.10
+			}
+		
+		}
+		
+		ironduke = {
+		
+			picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.01
+				army_org_factor = 0.05
+				army_attack_factor=0.05
+				army_defence_factor = 0.05
+				intellectuals_drift = 0.05
+			}
+		
+		}
+		srhq = {
+		
+			picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.025
+				army_org_factor = 0.05
+				ruler_drift = 0.05
+			}
+		
+		}
+		loyalty = {
+		
+			picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.01
+				people_drift = 0.05
+				enemy_justify_war_goal_time = 0.15
+			}
+		
+		}
+		economy = {
+			picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		domination = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				elites_drift = 0.05
+				ruler_drift = 0.06
+			}
+		
+		}
+		sugarbread = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				intellectuals_drift = 0.05
+				ruler_drift = 0.06
+			}
+		
+		}
+		support = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				people_drift = 0.05
+				ruler_drift = 0.06
+			}
+		
+		}
+		progress = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_time_factor = -0.05
+			}
+		
+		}
+		wealth = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		
+		}
+		authority = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+			}
+		
+		}
+		messagedelivered = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				elites_drift = 0.05
+			}
+		
+		}
+		raideryes = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				army_org_factor = -0.05
+			}
+		
+		}
+		raiderno = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				army_org_factor = 0.05
+			}
+		
+		}
+		raidercamps = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor =0.05
+				consumer_goods_factor =0.05
+			}
+		
+		}
+		guidingcamps = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = -0.05
+			}
+		
+		}
+		slavemarkets = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+		
+		}
+		noslavemarkets = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+			}
+		
+		}
+		reformed = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				training_time_army_factor = -0.25
+				stability_weekly = 0.005
+			}
+		
+		}
+		knowledge_areas = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_time_factor = -0.05
+			}
+		
+		}
+		
+		royalty = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				ruler_drift = 0.1
+				elites_drift = 0.08
+				intellectuals_drift = 0.02
+				people_drift = 0.02
+			}
+		
+		}
+		
+		crystal_springs = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				people_drift = 0.10
+				elites_drift = 0.10
+				intellectuals_drift = 0.10
+				ruler_drift = 0.10
+			}
+		
+		}
+		
+		old_ways = {
+		
+		picture = ncr_ranger_idea
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				ruler_drift = 0.10
+				elites_drift = 0.10
+				intellectuals_drift = 0.10
+			}
+		
+		}
+
+	}
+}

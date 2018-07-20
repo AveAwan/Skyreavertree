@@ -1,0 +1,3215 @@
+focus_tree = {
+id = 'sky'
+country = {
+factor=0
+modifier = {
+add = 20
+tag = sky
+}
+}
+default = no
+
+
+	focus = {
+		id = origins
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 1.00
+		x = 11
+		y = 0
+			available_if_capitulated = yes
+			completion_reward = {
+					add_political_power = 50
+					country_event = { id = sky_events.1 }
+					add_ideas = raidergang
+				}
+			
+
+	}
+	focus = {
+		id = Buildingtheskyreavers
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 1.00
+		prerequisite = {
+			focus = origins
+		}
+		x = 11
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+							add_stability = 0.15
+							set_technology = { leather_armour = 1 }
+							country_event = { id = sky_events.2 }
+
+						}
+
+	}
+	focus = {
+		id =leader1
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 1.00
+		x = 15
+		y = 0
+			available_if_capitulated = yes
+			completion_reward = {
+					country_event = { id = sky_events.3 }
+				}
+			
+
+	}
+	focus = {
+		id =leader2
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 1.00
+		prerequisite = {
+			focus =leader1
+		}
+		x = 15
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					country_event = { id = sky_events.4 }
+				}
+			
+
+	}
+	focus = {
+		id = Kronosambitions
+		icon = GFX_focus_generic_military_mission
+		cost = 8.6
+		prerequisite = {
+			focus = Buildingtheskyreavers
+		}
+		prerequisite = {
+			focus = leader2
+		}
+		x = 13
+		y = 2
+			available_if_capitulated = yes
+			completion_reward = {
+					add_manpower=150
+					army_experience=10
+					set_technology = { slashing_weaponry = 1 }
+				}
+
+	}
+	focus = {
+		id = reformation
+		icon = GFX_goal_generic_small_arms
+		cost = 8.60
+		prerequisite = {
+			focus = Kronosambitions
+		}
+		x = 9
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+				add_war_support=0.10
+				add_manpower=500
+				add_political_power=-50
+								}
+
+	}
+	focus = {
+		id = work
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.60
+		prerequisite = {
+			focus = industryefforts
+		}
+		x = 8
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+			201 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			329 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id =economyboost
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.60
+		prerequisite = {
+			focus = work
+		}
+		x = 8
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+				add_political_power=-50
+				add_ideas=economy
+					}
+
+	}
+	focus = {
+		id = improvingloyalty
+		icon = GFX_goal_generic_consumer_goods
+		cost = 8.60
+		prerequisite = {
+			focus =economyboost
+		}
+		prerequisite = {
+			focus =proffessionalenslavement
+		}
+		x = 9
+		y = 7
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas=loyalty
+					}
+
+	}
+	focus = {
+		id = industryefforts
+		icon = GFX_goal_generic_improve_relations
+		cost = 8.60
+		prerequisite = {
+			focus = reformation
+		}
+		x = 8
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+					201 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 4
+							add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
+					add_timed_idea = { idea = kronodeal days = 730 }
+					}
+
+	}							
+	focus = {
+		id = raiding
+		icon = GFX_goal_generic_walls_focus
+		cost = 8.60
+		prerequisite = {
+			focus = reformation
+		}
+		x = 10
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+					country_event = {
+							id =sky_events.5
+						}
+				}
+
+	}
+	focus = {
+		id = raidercamps
+		icon = GFX_goal_generic_slums_focus
+		cost = 8.60
+		prerequisite = {
+			focus = raiding
+		}
+		x = 10
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					country_event = {
+							id = sky_events.6
+						}
+				}
+
+	}
+	focus = {
+		id = proffessionalenslavement
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 8.60
+		prerequisite = {
+			focus = raidercamps
+		}
+		x = 10
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					country_event = {
+							id = sky_events.7
+						}
+				}
+
+	}
+	focus = {
+		id = diplomaticapp
+		icon = GFX_goal_generic_major_alliance
+		cost = 8.60
+		prerequisite = {
+			focus = Kronosambitions
+		}
+		x = 3
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+			add_political_power = 50
+				}
+
+	}
+	focus = {
+		id =dipvegas
+		icon = GFX_goal_generic_improve_relations
+		cost = 8.60
+		prerequisite = {
+			focus = diplomaticapp
+		}
+		x = 5
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+			add_political_power = -50
+					VEG = {
+					add_opinion_modifier = { target = SKY modifier = medium_increase }
+				}
+			}
+	}
+	focus = {
+		id =diplomatncr
+		icon = GFX_goal_generic_national_unity
+		cost = 8.60
+		prerequisite = {
+			focus = diplomaticapp
+		}
+		x = 3
+		y = 7
+			available_if_capitulated = yes
+			completion_reward = {
+			add_political_power = -50
+				NCR = {
+				add_opinion_modifier = { target = SKY modifier = medium_increase }
+					}
+			}
+	}
+	focus = {
+		id =diplomatdr
+		icon = GFX_goal_support_democracy
+		cost = 8.60
+		prerequisite = {
+			focus = diplomaticapp
+		}
+		x = 1
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+			add_political_power = -50
+					DES = {
+					add_opinion_modifier = { target = SKY modifier = medium_increase }
+				}
+			}
+
+	}
+	focus = {
+		id =d5
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 8.60
+		prerequisite = {
+			focus = diplomatdr
+		}
+		x = 2
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+			add_political_power = -50
+				DES = {
+				country_event = { id = sky_events.81 days = 2 }
+				custom_effect_tooltip = needs_approval
+					}
+				}
+
+	}
+	
+	focus = {
+		id =d5b2
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 8.60
+		prerequisite = {
+			focus = d5
+		}
+		x = 2
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+			add_political_power = -50
+				DES = {
+				country_event = sky_events.93
+				custom_effect_tooltip = needs_approval
+				}
+			}
+
+	}
+
+	focus = {
+		id =d5a
+		icon = GFX_goal_generic_defence
+		cost = 8.60
+		prerequisite = {
+			focus = diplomatdr
+		}
+		available = {
+		SKY = {
+		has_manpower > 375
+		}
+		}
+		x = 0
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+			add_manpower = -375
+				DES = {
+				country_event = { id = sky_events.95 days = 2 }
+				custom_effect_tooltip = needs_approval
+					}
+				}
+
+	}	
+	
+	focus = {
+		id =d5a2
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 8.60
+		prerequisite = {
+			focus = d5a
+		}
+		x = 0
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+				187 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+						}
+				}
+				11 = {
+						add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+						}
+				}
+				389 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 3
+							instant_build = yes
+						}
+				}
+				220 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 3
+							instant_build = yes
+						}
+				}
+			}
+
+	}	
+
+	focus = {
+		id =d6
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 8.60
+		prerequisite = {
+			focus = diplomatncr
+		}
+		x = 2
+		y = 8
+			available_if_capitulated = yes
+			completion_reward = {
+			NCR = {
+				country_event = { id = sky_events.8 days = 2 }
+				custom_effect_tooltip = needs_approval
+					}
+				}
+
+	}
+	
+	focus = {
+		id =d6b2
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 8.60
+		prerequisite = {
+			focus = d6
+		}
+		x = 2
+		y = 9
+			available_if_capitulated = yes
+			completion_reward = {
+				NCR = {
+					country_event = sky_events.93
+					custom_effect_tooltip = needs_approval
+				}
+			}
+
+	}
+	
+	focus = {
+		id =d6a
+		icon = GFX_goal_generic_defence
+		cost = 8.60
+		prerequisite = {
+			focus = diplomatncr
+		}
+		available = {
+		SKY = {
+		has_manpower > 375
+		}
+		}
+		x = 4
+		y = 8
+			available_if_capitulated = yes
+			completion_reward = {
+			add_manpower = -375
+			NCR = {
+				country_event = { id = sky_events.95 days = 2 }
+				custom_effect_tooltip = needs_approval
+					}
+				}
+
+	}
+	
+	focus = {
+		id =d6a2
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 8.60
+		prerequisite = {
+			focus = d6a
+		}
+		x = 4
+		y = 9
+			available_if_capitulated = yes
+			completion_reward = {
+				45 = {
+							add_building_construction = {
+								type = infrastructure
+								level = 3
+								instant_build = yes
+							}
+				}
+				334 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 3
+							instant_build = yes
+						}
+				}
+				329 = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = infrastructure
+							level = 3
+							instant_build = yes
+						}
+				}
+			}
+	}
+	
+	focus = {
+		id =d7b
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 8.60
+		prerequisite = {
+			focus = dipvegas
+		}
+		x = 4
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+			add_political_power = -50
+				VEG = {
+				country_event = { id = sky_events.82 days = 2 }
+				custom_effect_tooltip = needs_approval
+				}
+			}
+
+	}
+	
+	focus = {
+		id =d7b2
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 8.60
+		prerequisite = {
+			focus = d7b
+		}
+		x = 4
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+			add_political_power = -50
+				VEG = {
+				country_event = sky_events.93
+				custom_effect_tooltip = needs_approval
+				}
+			}			
+	}
+	
+	focus = {
+		id =d7a
+		icon = GFX_goal_generic_defence
+		cost = 8.60
+		prerequisite = {
+			focus = dipvegas
+		}
+		available = {
+		SKY = {
+		has_manpower > 375
+		}
+		}
+		x = 6
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+			add_manpower = -375
+			VEG = {
+				country_event = { id = sky_events.95 days = 2 }
+				custom_effect_tooltip = needs_approval
+					}
+				}
+
+	}
+	
+	focus = {
+		id =d7a2
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 8.60
+		prerequisite = {
+			focus = d7a
+		}
+		x = 6
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+				463 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+						}
+				}
+				75 = {
+						add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+						}
+				}
+				344 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 3
+							instant_build = yes
+						}
+				}
+				154 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 3
+							instant_build = yes
+						}
+				}
+			}
+
+	}
+
+	focus = {
+		id = migration1
+		icon = GFX_goal_generic_cities_focus
+		cost = 8.60
+		prerequisite = {
+			focus = d7a2
+			focus = d5a2
+			focus = d6a2
+			focus = economyboost
+		}
+		x = 6
+		y = 10
+			available_if_capitulated = yes
+			completion_reward = {
+				add_manpower = 1000
+			}
+
+	}
+	
+	focus = {
+		id = migration2
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 8.60
+		prerequisite = {
+			focus = migration1
+		}
+		x = 6
+		y = 11
+			available_if_capitulated = yes
+			completion_reward = {
+			add_ideas = migration
+			}
+
+	}
+	
+	focus = {
+		id =d8
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 8.60
+		prerequisite = {
+			focus = d6a2
+			focus = d6b2
+		}
+		prerequisite = {
+			focus = d7a2
+			focus = d7b2
+		}
+		prerequisite = {
+			focus = d5a2
+			focus = d5b2
+		}
+		x = 3
+		y = 11
+			available_if_capitulated = yes
+			completion_reward = {
+			add_political_power = 100
+				}
+
+	}
+	
+	focus = { 
+			id = militarypast
+			icon = GFX_goal_rhineland 
+			ai_will_do = { factor = 0 } 
+			x =13 
+			y =3 
+			available = {
+			SKY = {
+			has_manpower > 500
+			}
+			}
+			cost = 8.7
+			prerequisite = {
+			focus = Kronosambitions
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+					{
+					389 = {
+					limit = {
+					free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+					}
+					OR = {
+					is_in_home_area = yes
+					NOT = {
+					owner = {
+					any_owned_state = {
+					free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+					}
+					is_in_home_area = yes
+					}
+					}
+					}
+					}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+					}
+					add_manpower= -500 
+					add_stability=0.10
+				}
+		}
+	focus = { 
+			id =a61
+			icon = GFX_goal_rhineland 
+			ai_will_do = { factor = 0 } 
+			x =12
+			y =4
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 8.60  
+			prerequisite = {
+			focus = militarypast
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+					{
+					329 = {
+					limit = {
+					free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+					}
+					OR = {
+					is_in_home_area = yes
+					NOT = {
+					owner = {
+					any_owned_state = {
+					free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+					}
+					is_in_home_area = yes
+					}
+					}
+					}
+					}
+					}
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+					}
+					add_manpower= -500 
+				}
+		}
+	focus = { 
+			id =a62
+			icon = GFX_focus_research 
+			ai_will_do = { factor = 0 } 
+			x =12
+			y =5
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 8.60  
+			prerequisite = {
+			focus =a61
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+					{
+					add_research_slot = 1 
+					add_manpower= -500
+				}
+		}
+	focus = { 
+			id =a63
+			icon = GFX_goal_continuous_research 
+			ai_will_do = { factor = 0 } 
+			x =12 
+			y =6
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 8.60  
+			prerequisite = {
+			focus =a62
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+					{
+					add_manpower= -500
+					add_ideas=hydroponics
+					set_technology = { auto_injectors = 1 }
+					}
+		}
+		
+		focus = { 
+			id =a64
+			icon = GFX_goal_continuous_research 
+			ai_will_do = { factor = 0 } 
+			x =12 
+			y =7
+
+			cost = 8.60  
+			prerequisite = {
+			focus =a63
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+					{
+					add_to_tech_sharing_group = sky_research
+					every_other_country = {
+						limit = { is_in_faction_with = SKY }
+						add_to_tech_sharing_group = sky_research 
+						}
+					}
+		}	
+		
+	focus = { 
+			id =a65
+			icon = GFX_goal_generic_fortify_city
+			ai_will_do = { factor = 0 } 
+			x =12 
+			y =9
+
+			cost = 8.60  
+			prerequisite = {
+			focus =a64
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+					{
+					add_ideas=ironduke
+					create_field_marshal = {
+					name = "Frank 'The Butcher' Manning"
+					portrait_path = "gfx/leaders/SKY/Butcher.dds"
+					skill = 5
+					traits = {
+					}
+					attack_skill = 2
+					defense_skill = 4
+					planning_skill = 4
+					logistics_skill = 3
+			}
+					}
+		}
+		focus = { 
+			id =areaaa
+			icon = GFX_focus_prc_infiltration
+			ai_will_do = { factor = 0 } 
+			x =14 
+			y =4 
+			
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 8.60  
+			prerequisite = {
+			focus = militarypast
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+					{
+					389 = {
+					limit = {
+					free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+					}
+					OR = {
+					is_in_home_area = yes
+					NOT = {
+					owner = {
+					any_owned_state = {
+					free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+					}
+					is_in_home_area = yes
+					}
+					}
+					}
+					}
+					}
+					add_extra_state_shared_building_slots = 5
+					}
+					add_manpower= -500 
+				}
+		}
+		focus = { 
+			id =areaab 
+			icon = GFX_goal_generic_propaganda
+			ai_will_do = { factor = 0 } 
+			x =14 
+			y =5
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 8.6  
+			prerequisite = {
+			focus = areaaa
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+					{
+					add_ideas=desertradio 					
+				389 = {
+				add_building_construction = {
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+				}
+				add_manpower= -500
+				}
+		}
+			focus = { 
+			id =areaabc
+			icon = GFX_goal_generic_axis_build_infantry 
+			ai_will_do = { factor = 0 } 
+			x =16
+			y =5
+
+			cost = 8.6  
+			prerequisite = {
+			focus = areaaa
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower= 1000
+				}
+		}
+		focus = { 
+			id =depot
+			icon = GFX_goal_generic_walls_focus
+			ai_will_do = { factor = 0 } 
+			x =16
+			y =6
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 12.9
+			prerequisite = {
+			focus = areaabc
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower = -500
+				add_ideas=reaversworkbench
+				}
+				
+		}
+		focus = { 
+			id =depot2
+			icon = GFX_goal_generic_army_artillery2
+			ai_will_do = { factor = 0 } 
+			x =16
+			y =7
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 12.9
+			prerequisite = {
+			focus = depot
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower= -500
+				set_technology = { explosive_tech_5 = 1 }
+				set_technology = { anti_tank_tech_5 = 1 }
+				}
+				
+		}
+		focus = { 
+			id =depot3
+			icon = GFX_focus_generic_license_production
+			ai_will_do = { factor = 0 } 
+			x =16
+			y =8
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 12.9
+			prerequisite = {
+			focus = depot2
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower = -500
+				set_technology = { power_armour = 1 }
+				set_technology = { advanced_ballistic_weaponry = 1 }
+				}
+				
+		}
+		focus = { 
+			id =traininggrounds2
+			icon = GFX_focus_generic_military_academy
+			ai_will_do = { factor = 0 } 
+			x =14
+			y =7
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 12.9
+			prerequisite = {
+			focus = traininggrounds
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower= -500
+				add_ideas=trainingfacilities
+				}
+		}
+		focus = { 
+			id =traininggrounds3
+			icon = GFX_goal_generic_data_focus
+			ai_will_do = { factor = 0 } 
+			x =14
+			y =8
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 12.9
+			prerequisite = {
+			focus = traininggrounds2
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower= -500
+				set_technology = { basic_drill = 1 }
+				set_technology = { special_forces = 1 }
+				}
+		}
+		focus = { 
+			id =traininggrounds
+			icon = GFX_goal_anschluss
+			ai_will_do = { factor = 0 } 
+			x =14
+			y =6
+			available = {
+			has_manpower > 500
+			}
+
+			cost = 12.9  
+			prerequisite = {
+			focus = areaab
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower= -500
+				army_experience=50
+				}
+		}
+		focus = { 
+			id =hq
+			icon = GFX_goal_generic_construct_military
+			ai_will_do = { factor = 0 } 
+			x =15
+			y =9
+
+			cost = 8.6  
+			prerequisite = {
+			focus = traininggrounds3
+		}
+			prerequisite = {
+			focus = depot3
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_ideas=srhq
+				add_stability=0.10
+				add_manpower=500
+				add_political_power=100
+				}
+		}
+		focus = { 
+			id =expand1
+			icon = GFX_goal_generic_major_war
+			ai_will_do = { factor = 0 } 
+			x =23
+			y =3
+
+			cost = 8.6  
+			prerequisite = {
+			focus = Kronosambitions
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_political_power = 50
+				}
+		}
+		
+		focus = {
+			id=concessions
+			icon = GFX_goal_generic_land_doctrines_focus
+			ai_will_do = { factor = 0 }
+			x =22
+			y=6
+			
+			cost = 8.6
+			prerequisite = {
+			focus = expand1
+			}
+				available_if_capitulated = yes
+				completion_reward =
+				{
+				add_popularity = {
+				ideology = people
+				popularity = 0.10
+				}
+				add_popularity = {
+				ideology = elites
+				popularity = 0.10
+				}
+				add_popularity = {
+				ideology = intellectuals
+				popularity = 0.10
+				}
+				load_oob =SKY_gang
+				}
+			}
+		
+		focus = {
+			id=reaveralliance
+			icon = GFX_goal_generic_land_doctrines_focus
+			ai_will_do = { factor = 0 }
+			x =24
+			y=6
+			
+			cost = 8.6
+			prerequisite = {
+			focus = expand1
+			}
+				available_if_capitulated = yes
+				completion_reward =
+				{
+			set_rule = { can_create_factions = yes }
+				}
+			}
+		
+		focus = { 
+			id =expand2
+			icon = GFX_goal_generic_major_war
+			ai_will_do = { factor = 0 } 
+			x =21
+			y =4
+
+			cost = 8.6  
+			
+			mutually_exclusive = {
+			focus = befriend1
+			}
+			bypass = {
+					IF = {
+						326 = { is_owned_by = SKY }
+						75 = { is_owned_by = SKY }
+					}
+			}
+			prerequisite = {
+			focus = expand1
+			}	
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_state_claim = 326
+				add_state_claim = 75
+				}
+		}
+		focus = { 
+			id =expand2.a
+			icon = GFX_goal_generic_war_focus
+			ai_will_do = { factor = 0 } 
+			x =21
+			y =5
+
+			cost = 8.60  
+			prerequisite = {
+			focus = expand2
+		}
+			available = {
+				owns_state = 75
+				owns_state = 326
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_political_power = 50
+				326 = { remove_building = { type = arms_factory level = 1 } }
+				326	= { remove_building = { type = industrial_complex level =1 } } 
+				
+				201 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				
+				}
+		}
+		focus = { 
+			id =expand2.b
+			icon = GFX_goal_generic_recruitment_focus
+			ai_will_do = { factor = 0 } 
+			x =21
+			y =7
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand2.a
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_state_core = 326
+				add_state_core = 75
+				}
+		}
+
+		focus = { 
+			id =expand2.d
+			icon = GFX_goal_generic_building_focus
+			ai_will_do = { factor = 0 } 
+			x =20
+			y =9
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand2.c
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					326 = {
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+						}
+					}
+				}
+		}
+
+		focus = { 
+			id =expand2.e
+			icon = GFX_goal_generic_military_sphere
+			ai_will_do = { factor = 0 } 
+			x =22
+			y =9
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand2.c
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					326 = {
+						add_building_construction = {
+							type = bunker
+							province = 3513 
+							level = 3
+							instant_build = yes
+						}
+					}
+					326 = {
+						add_building_construction = {
+							type = bunker
+							province = 1577 
+							level = 3
+							instant_build = yes
+						}
+					}
+					326 = {
+						add_building_construction = {
+							type = bunker
+							province = 3512 
+							level = 3
+							instant_build = yes
+						}
+					}
+					326 = {
+						add_building_construction = {
+							type = bunker
+							province = 3511
+							level = 3
+							instant_build = yes
+						}
+					}
+					326 = {
+						add_building_construction = {
+							type = bunker
+							province = 3369
+							level = 3
+							instant_build = yes
+						}
+					}
+					75 = {
+						add_building_construction = {
+							type = bunker
+							province = 3408
+							level = 3
+							instant_build = yes
+						}
+					}
+					75 = {
+						add_building_construction = {
+							type = bunker
+							province = 3175 
+							level = 3
+							instant_build = yes
+						}
+					}					
+				}
+		}		
+
+		focus = { 
+			id =expand2.c
+			icon = GFX_goal_generic_recruitment_focus
+			ai_will_do = { factor = 0 } 
+			x =21
+			y =8
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand2.b
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				load_oob = SKY_gang
+				}
+		}		
+
+		focus = { 
+			id =befriend1
+			icon = GFX_goal_focus_spy
+			ai_will_do = { factor = 0 } 
+			x =18
+			y =4
+			
+			mutually_exclusive = {
+			focus = expand2
+			}
+			cost = 8.6  
+			prerequisite = {
+			focus = expand1
+			}
+			bypass = {
+					IF = {
+						SKY = {has_guaranteed = GRA}
+					}
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				SKY = {
+				give_guarantee = GRA
+			}
+				}
+		}
+		focus = { 
+			id =befriend1.a
+			icon = GFX_goal_generic_recruitment_focus
+			ai_will_do = { factor = 0 } 
+			x =18
+			y =5
+			available = {
+			has_manpower > 250
+			}
+			
+			cost = 8.6  
+			prerequisite = {
+			focus = befriend1
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower = -250
+				add_political_power = -50
+				326 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+				}
+			}	
+		}
+		focus = { 
+			id =befriend1.b
+			icon = GFX_goal_generic_generic_diplomatic_focus
+			ai_will_do = { factor = 0 } 
+			x =18
+			y =7
+			
+			cost = 8.6  
+			prerequisite = {
+			focus = befriend1.a
+			}
+			prerequisite = {
+			focus = reaveralliance
+			}
+			bypass = {
+				GRA = { 
+				is_in_faction_with = SKY
+				}
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+						if = {
+							limit = {
+									GRA = {is_ai = yes }
+							}
+							GRA = {
+							country_event = sky_events.18
+							}
+						}
+						if = {
+							limit = {
+								NOT ={ GRA = { is_ai = yes } }
+							}
+							GRA = {
+							country_event = sky_events.19
+							 }
+						}
+				}
+		}
+		
+		focus = { 
+			id =befriend1.c
+			icon = GFX_goal_generic_territory_or_war
+			ai_will_do = { factor = 0 } 
+			x =18
+			y =9
+			
+			cost = 8.6  
+			prerequisite = {
+			focus = befriend1.b
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					random_other_country = {
+						limit = {
+							OR = {
+								owns_state = 72
+								owns_state = 204
+								owns_state = 373
+								}
+						}
+						GRA = {
+							create_wargoal = { 
+							type = annex_everything 
+							target = PREV
+							}
+						}
+					}
+				}
+		}
+		
+		focus = { 
+			id =befriend1.d
+			icon = GFX_goal_generic_large_scale_normal_industry_focus
+			ai_will_do = { factor = 0 } 
+			x =17
+			y =10
+			
+			cost = 8.6  
+			prerequisite = {
+			focus = befriend1.c
+			}
+		available = {
+			GRA = {
+		owns_state = 373
+		owns_state = 72
+			}
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					373 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+					}		
+
+					72 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+					}
+				GRA = {
+				add_manpower = -500
+				}
+				}
+		}
+		
+		focus = { 
+			id =befriend1.e
+			icon = GFX_goal_generic_production
+			ai_will_do = { factor = 0 } 
+			x =19
+			y =10
+			
+			cost = 8.6  
+			prerequisite = {
+			focus = befriend1.c
+			}
+		available = {
+			GRA = {
+			owns_state = 204
+			owns_state = 373
+			owns_state = 72
+				}
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					GRA =	{
+				add_state_core = 72
+				add_state_core = 373
+				add_state_core = 204
+					}				
+				}
+		}	
+		
+		focus = { 
+			id =expand3
+			icon = GFX_goal_generic_major_war
+			ai_will_do = { factor = 0 } 
+			x =25
+			y =4
+
+			cost = 8.6  
+			
+			mutually_exclusive = {
+			focus = befriend2
+			}
+			prerequisite = {
+			focus = expand1
+			}
+			bypass = {
+					IF = {
+						220 = { is_owned_by = SKY }
+						425 = { is_owned_by = SKY }
+					}
+			}
+			available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_state_claim = 425
+				add_state_claim = 220
+				}
+		}
+		focus = { 
+			id =expand3.a
+			icon = GFX_goal_generic_war_focus
+			ai_will_do = { factor = 0 } 
+			x =25
+			y =5
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = expand3
+		}
+		available = {
+				owns_state = 220
+				owns_state = 425
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_political_power = 50
+				425 = { remove_building = { type = arms_factory level = 1 } }
+				425	= { remove_building = { type = industrial_complex level =1 } } 
+				
+				201 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				
+				}
+		}
+		focus = { 
+			id =expand3.b
+			icon = GFX_goal_generic_recruitment_focus
+			ai_will_do = { factor = 0 } 
+			x =25
+			y =7
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = expand3.a
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_state_core = 425
+				add_state_core = 220
+				425 = { set_state_name = 'Mountreaver' }
+				}
+		}
+		
+		focus = { 
+			id =expand3.c
+			icon = GFX_goal_generic_military_deal
+			ai_will_do = { factor = 0 } 
+			x =25
+			y =8
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand3.b
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				load_oob = SKY_gang
+				}
+		}
+		
+		focus = { 
+			id =expand3.d
+			icon = GFX_goal_generic_propaganda
+			ai_will_do = { factor = 0 } 
+			x =24
+			y =9
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand3.c
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					425 = {
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+						}
+					}
+				}
+		}
+		
+		focus = { 
+			id =expand3.e
+			icon = GFX_goal_generic_major_alliance
+			ai_will_do = { factor = 0 } 
+			x =26
+			y =9
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand3.c
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					220 = {
+						add_building_construction = {
+							type = bunker
+							province = 8884 
+							level = 3
+							instant_build = yes
+						}
+					}
+					220 = {
+						add_building_construction = {
+							type = bunker
+							province = 8885
+							level = 3
+							instant_build = yes
+						}
+					}
+					220 = {
+						add_building_construction = {
+							type = bunker
+							province = 8886
+							level = 3
+							instant_build = yes
+						}
+					}
+					220 = {
+						add_building_construction = {
+							type = bunker
+							province = 8887
+							level = 3
+							instant_build = yes
+						}
+					}	
+					220 = {
+						add_building_construction = {
+							type = bunker
+							province = 8888
+							level = 3
+							instant_build = yes
+						}
+					}
+					220 = {
+						add_building_construction = {
+							type = bunker
+							province = 8890 
+							level = 3
+							instant_build = yes
+						}
+					}
+					425 = {
+						add_building_construction = {
+							type = bunker
+							province = 8895 
+							level = 3
+							instant_build = yes
+						}
+					}
+					425 = {
+						add_building_construction = {
+							type = bunker
+							province = 8896
+							level = 3
+							instant_build = yes
+						}
+					}
+					425 = {
+						add_building_construction = {
+							type = bunker
+							province = 8898 
+							level = 3
+							instant_build = yes
+						}
+					}
+					
+				}
+		}
+		
+		focus = { 
+			id =expand4
+			icon = GFX_goal_generic_major_war
+			ai_will_do = { factor = 0 } 
+			x =35
+			y =4
+
+			cost = 8.6  
+			
+			mutually_exclusive = {
+			focus = befriend2
+			}
+			prerequisite = {
+			focus = expand1
+			}
+			bypass = {
+					IF = {
+						204 = { is_owned_by = SKY }
+						373 = { is_owned_by = SKY }
+						72 = { is_owned_by = SKY }
+					}
+			}
+			available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_state_claim = 204
+				add_state_claim = 373
+				add_state_claim = 72
+				}
+		}
+		
+		focus = { 
+			id =expand4.a
+			icon = GFX_goal_generic_war_focus
+			ai_will_do = { factor = 0 } 
+			x =35
+			y =5
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = expand4
+		}
+		available = {
+				owns_state = 204
+				owns_state = 373
+				owns_state = 72
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_political_power = 50
+				373 = { remove_building = { type = arms_factory level = 1 } }
+				373	= { remove_building = { type = industrial_complex level =1 } } 
+				
+				201 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				
+				}
+		}
+		
+		focus = { 
+			id =expand4.b
+			icon = GFX_goal_generic_recruitment_focus
+			ai_will_do = { factor = 0 } 
+			x =35
+			y =7
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = expand4.a
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_state_core = 204
+				add_state_core = 373
+				add_state_core = 72
+				373 = { set_state_name = 'Reavercity' }
+				}
+		}
+		
+		focus = { 
+			id = expand4.c
+			icon = GFX_focus_generic_little_entente
+			ai_will_do = { factor = 0 } 
+			x =35
+			y =8
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand4.b
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				load_oob = SKY_gang
+				}
+		}
+		
+		focus = { 
+			id = expand4.d
+			icon = GFX_goal_generic_large_scale_normal_industry_focus
+			ai_will_do = { factor = 0 } 
+			x =34
+			y =9
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand4.c
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					373 = {
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+						}
+					}
+				}
+		}
+		
+		focus = { 
+			id = expand4.e
+			icon = GFX_goal_generic_walls_focus
+			ai_will_do = { factor = 0 } 
+			x =36
+			y =9
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand4.c
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					72 = {
+						add_building_construction = {
+							type = bunker
+							province = 1004 
+							level = 3
+							instant_build = yes
+						}
+					}
+					72 = {
+						add_building_construction = {
+							type = bunker
+							province = 1008
+							level = 3
+							instant_build = yes
+						}
+					}
+					72 = {
+						add_building_construction = {
+							type = bunker
+							province = 2639
+							level = 3
+							instant_build = yes
+						}
+					}
+					72 = {
+						add_building_construction = {
+							type = bunker
+							province = 6365
+							level = 3
+							instant_build = yes
+						}
+					}
+					373 = {
+						add_building_construction = {
+							type = bunker
+							province = 6366
+							level = 3
+							instant_build = yes
+						}
+					}
+					373 = {
+						add_building_construction = {
+							type = bunker
+							province = 6363
+							level = 3
+							instant_build = yes
+						}
+					}							
+					204 = {
+						add_building_construction = {
+							type = bunker
+							province = 6370
+							level = 3
+							instant_build = yes
+						}
+					}	
+
+					204 = {
+						add_building_construction = {
+							type = bunker
+							province = 6371
+							level = 3
+							instant_build = yes
+						}
+					}
+					204 = {
+						add_building_construction = {
+							type = bunker
+							province = 6374
+							level = 3
+							instant_build = yes
+						}
+					}	
+					204 = {
+						add_building_construction = {
+							type = bunker
+							province = 6373
+							level = 3
+							instant_build = yes
+						}
+					}							
+				}
+		}
+
+		
+		focus = { 
+			id =befriend3
+			icon = GFX_goal_focus_spy
+			ai_will_do = { factor = 0 } 
+			x =32
+			y =4
+
+			cost = 8.6  
+			
+			mutually_exclusive = {
+			focus = expand4
+			}
+			prerequisite = {
+			focus = expand1
+			}
+			bypass = {
+					IF = {
+						SKY = {has_guaranteed = FRI}
+					}
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				SKY = {
+				give_guarantee = FRI
+			}
+				}
+		}
+
+		focus = { 
+			id =befriend3.a
+			icon = GFX_goal_generic_slums_focus
+			ai_will_do = { factor = 0 } 
+			x =32
+			y =5
+			available = {
+			has_manpower > 250
+			}
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = befriend3
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower = -250
+				add_political_power = -50
+				373 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+					}
+				}
+		}
+		
+		focus = { 
+			id =befriend3.b
+			icon = GFX_goal_generic_generic_diplomatic_focus
+			ai_will_do = { factor = 0 } 
+			x =32
+			y =7
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = befriend3.a
+		}
+			prerequisite = {
+			focus = reaveralliance
+		}		
+			bypass = {
+				FRI = { 
+				is_in_faction_with = SKY
+				}
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					if = {
+							limit = {
+								FRI = {is_ai = yes }
+							}
+						FRI = {
+						country_event = sky_events.18
+					
+						}
+					}
+					if = {
+						limit = {
+							NOT ={ FRI = { is_ai = yes } }
+						}
+						FRI = {
+						country_event = sky_events.19
+						 }
+					}
+				}
+		}
+		
+		focus = { 
+			id =befriend3.c
+			icon = GFX_goal_generic_occupy_states_ongoing_war
+			ai_will_do = { factor = 0 } 
+			x =32
+			y =9
+
+			cost = 8.6  
+			prerequisite = {
+			focus = befriend3.b
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					random_other_country = {
+						limit = {
+							OR = {
+								owns_state = 326
+								owns_state = 75
+								}
+						}
+						FRI = {
+							create_wargoal = { 
+							type = annex_everything 
+							target = PREV
+							}
+						}
+					}
+				}
+		}
+
+		focus = { 
+			id =befriend3.d
+			icon = GFX_goal_generic_position_armies
+			ai_will_do = { factor = 0 } 
+			x =31
+			y =10
+
+			cost = 8.6  
+			prerequisite = {
+			focus = befriend3.c
+		}
+		available = {
+			FRI = {	
+				owns_state = 326
+				owns_state = 75
+			}
+		}
+						
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					326 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+					}
+					75 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+					}
+					FRI = {	
+						add_manpower = -500
+					}
+				}
+		}	
+
+		focus = { 
+			id =befriend3.e
+			icon = GFX_goal_generic_wolf_pack
+			ai_will_do = { factor = 0 } 
+			x =33
+			y =10
+
+			cost = 8.6  
+			prerequisite = {
+			focus = befriend3.c
+		}
+		available = {
+			owns_state = 326
+			owns_state = 75
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{				
+				add_state_core = 75
+				add_state_core = 326				
+				}
+		}
+		
+		focus = { 
+			id =befriend2
+			icon = GFX_goal_focus_spy
+			ai_will_do = { factor = 0 } 
+			x =28
+			y =4
+
+			cost = 8.6  
+			
+			mutually_exclusive = {
+			focus = expand3
+			}
+			prerequisite = {
+			focus = expand1
+			}
+			bypass = {
+					IF = {
+						SKY = {has_guaranteed = THO}
+					}
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				SKY = {
+				give_guarantee = THO
+			}
+				}
+		}
+		focus = { 
+			id =befriend2.a
+			icon = GFX_goal_generic_slums_focus
+			ai_will_do = { factor = 0 } 
+			x =28
+			y =5
+			
+			available = {
+			has_manpower > 250
+			}
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = befriend2
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_manpower = -250
+				add_political_power = -50
+				425 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+					}
+				}
+		}
+		focus = { 
+			id =befriend2.b
+			icon = GFX_goal_generic_generic_diplomatic_focus
+			ai_will_do = { factor = 0 } 
+			x =28
+			y =7
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = befriend2.a
+		}
+			prerequisite = {
+			focus = reaveralliance
+		}
+		
+			bypass = {
+				THO = { 
+				is_in_faction_with = SKY
+				}
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					if = {
+						limit = {
+							THO = {is_ai = yes }
+							}
+						THO = {
+						country_event = sky_events.18
+					
+						}
+					}
+					if = {
+						limit = {
+							NOT ={ THO = { is_ai = yes } }
+						}
+						THO = {
+						country_event = sky_events.19
+						 }
+					}
+				}
+		}
+
+		focus = { 
+			id =befriend2.c
+			icon = GFX_goal_generic_territory_or_war
+			ai_will_do = { factor = 0 } 
+			x =28
+			y =9
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = befriend2.b
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					random_other_country = {
+						limit = {
+							OR = {
+								owns_state = 581
+								owns_state = 306
+								owns_state = 488
+								}
+						}
+						THO = {
+							create_wargoal = { 
+							type = annex_everything 
+							target = PREV
+							}
+						}
+					}
+				}
+		}
+
+		focus = { 
+			id =befriend2.d
+			icon = GFX_goal_generic_large_scale_normal_industry_focus
+			ai_will_do = { factor = 0 } 
+			x =27
+			y =10
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = befriend2.c
+		}
+		available = {
+			THO = {
+			owns_state = 306
+			owns_state = 488
+			}
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					488 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+					}		
+
+					306 = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+					}
+				THO = {
+				add_manpower = -500
+					}
+				}
+		}
+
+		focus = { 
+			id =befriend2.e
+			icon = GFX_goal_generic_production
+			ai_will_do = { factor = 0 } 
+			x =29
+			y =10
+
+			cost = 8.6  
+			
+			prerequisite = {
+			focus = befriend2.c
+		}
+		available = {
+		THO = {
+		owns_state = 581
+		owns_state = 306
+		owns_state = 488
+			}
+		}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					THO =	{
+				add_state_core = 581
+				add_state_core = 488
+				add_state_core = 306
+					}				
+				}
+		}		
+		
+		focus = { 
+			id =delivered
+			icon = GFX_goal_generic_advanced_firearms_focus
+			ai_will_do = { factor = 0 } 
+			x =23
+			y =11
+
+			cost = 8.6  
+			prerequisite = {
+			focus = expand2.b
+			focus = befriend1.b
+			}
+			prerequisite = {
+			focus = expand3.b
+			focus = befriend2.b
+			}
+			prerequisite = {
+			focus = expand4.b
+			focus = befriend3.b
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_political_power = 100
+				add_ideas =messagedelivered
+				
+				create_field_marshal = {
+				name = "Marcus Johnson"
+				portrait_path = "gfx/leaders/SKY/Marcus.dds"
+				skill = 5
+				traits = {
+				}
+				attack_skill = 2
+				defense_skill = 4
+				planning_skill = 4
+				logistics_skill = 3
+			}
+				}
+		}
+		focus = { 
+			id =fullfilled
+			icon = GFX_goal_generic_advanced_technology_focus
+			ai_will_do = { factor = 0 } 
+			x =15
+			y =11
+
+			cost = 8.6  
+			prerequisite = {
+			focus = hq	
+			focus = a65			
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_political_power = 100
+				add_ideas = knowledge_areas
+				}
+		}
+		
+		focus = { 
+			id =destiny
+			icon = GFX_focus_hun_elect_a_king
+			ai_will_do = { factor = 0 } 
+			x =13
+			y =13
+
+			cost = 8.6  
+			prerequisite = {
+			focus = fullfilled	
+			focus = delivered		
+			focus = reavers_reformed			
+			focus = d8
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				country_event = sky_events.17
+				hidden_effect = { remove_ideas = domination }
+				hidden_effect = { remove_ideas = sugarbread }
+				hidden_effect = { remove_ideas = support }
+				}
+		}
+		
+		focus = { 
+			id =monarchy_approach
+			icon = GFX_goal_tfv_strengthen_commonwealth_ties
+			ai_will_do = { factor = 0 } 
+			x =13
+			y =14
+			
+			mutually_exclusive = {
+			focus = forming_great_city
+			focus = Gang_2
+			}
+
+			cost = 8.6 
+			prerequisite = {
+			focus = destiny
+			}
+			
+			available = {
+				OR = {
+					has_government = ruler
+					has_government = elites
+				}
+			}
+
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				set_cosmetic_tag = SKY_MONARCHY
+				add_stability = 0.075
+				add_war_support = 0.025
+				add_ideas = royalty
+				}
+		}
+		
+		focus = { 
+			id = forming_great_city
+			icon = GFX_goal_support_democracy
+			ai_will_do = { factor = 0 } 
+			x =5
+			y =14
+			
+			mutually_exclusive = {
+			focus = monarchy_approach
+			focus = Gang_2
+			}
+			
+			cost = 8.6  
+			prerequisite = {
+			focus = destiny
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				set_cosmetic_tag = SKY_CITY
+				add_stability = 0.05
+				add_war_support = 0.05
+				add_ideas = crystal_springs
+				}
+		}
+		
+		focus = { 
+			id = Gang_2
+			icon = GFX_goal_NCR_Buyout
+			ai_will_do = { factor = 0 } 
+			x =21
+			y =14
+			
+			mutually_exclusive = {
+			focus = forming_great_city
+			focus = monarchy_approach
+			}
+
+			available = {
+				OR = {
+					has_government = intellectuals
+					has_government = elites
+				}
+			}
+			cost = 8.6
+			prerequisite = {
+			focus = destiny
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				set_cosmetic_tag = SKY_REGIME
+				add_stability = -0.05
+				add_war_support = 0.15
+				add_ideas = old_ways
+				}
+		}
+				
+		focus = { 
+			id =draft
+			icon = GFX_goal_generic_major_war
+			ai_will_do = { factor = 0 } 
+			x =8
+			y =8
+
+			cost = 12.90  
+			prerequisite = {
+			focus = improvingloyalty		
+			}
+
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_ideas = limited_conscription
+				}
+		}
+		
+		focus = { 
+			id =fortifications1
+			icon = GFX_goal_NCR_openlong15
+			ai_will_do = { factor = 0 } 
+			x =8
+			y =9
+
+			cost = 8.6  
+			prerequisite = {
+			focus = draft		
+			}
+
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+					389 = {
+						add_building_construction = {
+						type = bunker
+						province = 3366 
+						level = 3
+						instant_build = yes
+						}
+					}
+					389 = {
+						add_building_construction = {
+						type = bunker
+						province = 8883
+						level = 3
+						instant_build = yes
+						}
+					}
+					389 = {
+						add_building_construction = {
+						type = bunker
+						province = 8882
+						level = 3
+						instant_build = yes
+						}
+					}
+					329 = {
+						add_building_construction = {
+						type = bunker
+						province = 8875
+						level = 3
+						instant_build = yes
+						}
+					}
+					329 = {
+						add_building_construction = {
+						type = bunker
+						province = 8881 
+						level = 3
+						instant_build = yes
+						}
+					}
+					329 = {
+						add_building_construction = {
+						type = bunker
+						province = 8880
+						level = 3
+						instant_build = yes
+						}
+					}
+					329 = {
+						add_building_construction = {
+						type = bunker
+						province = 8879 
+						level = 3
+						instant_build = yes
+						}
+					}								
+				}
+		}
+		
+		focus = { 
+			id =reavers_reformed
+			icon = GFX_goal_generic_major_war
+			ai_will_do = { factor = 0 } 
+			x =9
+			y =11
+
+			cost = 8.6  
+			prerequisite = {
+			focus = draft	
+			}
+			prerequisite = {
+			focus = mobilization	
+			}
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_ideas = reformed
+				}
+		}
+		
+		focus = { 
+			id =mobilization
+			icon = GFX_goal_NCR_The_Capital_Fund
+			ai_will_do = { factor = 0 } 
+			x =10
+			y =8
+
+			cost = 12.90  
+			prerequisite = {
+			focus = improvingloyalty		
+			}
+
+				available_if_capitulated = yes  
+				completion_reward =
+				{
+				add_ideas =war_economy
+				}
+		}
+#End of focuses 
+}

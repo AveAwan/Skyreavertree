@@ -1,0 +1,30 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_idea_darius_advisor"
+		texturefile = "gfx/interface/ideas/darius_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_butcher_advisor"
+		texturefile = "gfx/interface/ideas/butcher_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_marcus_advisor"
+		texturefile = "gfx/interface/ideas/marcus_advisor.dds"
+	}	
+	spriteType = {
+		name = "GFX_idea_joe_advisor"
+		texturefile = "gfx/interface/ideas/joe_advisor.dds"
+	}
+		spriteType = {
+		name = "GFX_idea_mira_advisor"
+		texturefile = "gfx/interface/ideas/mira_advisor.dds"
+	}	
+			spriteType = {
+		name = "GFX_idea_ivan_serkov"
+		texturefile = "gfx/interface/ideas/ivan_serkov.dds"
+	}
+			spriteType = {
+		name = "GFX_idea_Joker"
+		texturefile = "gfx/interface/ideas/Joker.dds"
+	}
+}
